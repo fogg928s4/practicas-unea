@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Matrices {
     public static void main(String[] args) {
         int[] original = { 1, 2, 3 };
@@ -35,5 +37,16 @@ class Matrices {
         fromPrim = new int[] {prim, prom};
         System.out.println("5) fromPRim[0] >> " + fromPrim[0]); 
         System.out.println("6) fromPRim[1] >> " + fromPrim[1]);
+        Scanner scr = new Scanner(System.in);
+        System.out.flush();
+        System.out.println("AAAAAAAAAAAAAAAa");
+        scr.nextLine();
+        int[] og = {1,2,3};
+        int[] newOG = og;
+        System.out.println("newOG[1]>> " + newOG[1]);
+        System.out.println("og[1] " + og[1]);
+        newOG = new int[]{5,25,125}; // crea uno nuevo completamente separado
+        System.out.println("newOG[1]>> " + newOG[1]);
+        System.out.println("og[1] " + og[1]);
     }
 }
