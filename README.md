@@ -1,4 +1,4 @@
-# Practicas - Universidad Don Bosco
+# Practicas - Universidad Europea del Atlántico
 
 Este repositorio guarda algunas practicas de laboratorio, guias y propias pracitcas que se realicen con la Universidad Europea del Atrlántico que consideré de interés o relevancia.
 También incluye algunas discusiones o ejercicios extra propuestos.
