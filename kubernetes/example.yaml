@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-privada
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: mi-app
+        image: mi-usuario/mi-repo-privado:v1
+
+# for namespace
+apiVersion: v1
+kind: namespace
+metadata:
+  name: dev3
