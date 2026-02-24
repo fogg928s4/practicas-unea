@@ -3,9 +3,9 @@ package vistas;
 class Intervalo {
 
     // Datos
-    double longitud;
-    double limSuperior;
-    double limInferior;
+    private double longitud;
+    private double limSuperior;
+    private double limInferior;
 
     // Constructor
     public Intervalo(double inferior, double superior) {
@@ -27,5 +27,26 @@ class Intervalo {
 
     private double obtenerLongitud() {
         return limSuperior - limInferior;
+    }
+
+    // Metodos
+    public double puntoMedio() {
+        double temp = limSuperior + limInferior;
+        return temp/2;
+    }
+
+    public Intervalo unirIntervalos(Intervalo intervalo1, Intervalo intervalo2) {
+        double nuevoSuperior, nuevoInferior;
+
+        if(intervalo1.LimSuperior() >= intervalo2.LimInferior()) {
+            nuevoSuperior = intervalo2.LimSuperior();
+            nuevoInferior = intervalo1.LimInferior();
+        }
+        else {
+            nuevoSuperior = intervalo1.LimSuperior();
+            nuevoInferior = intervalo2.LimInferior();
+        }
+
+        return new Intervalo(nuevoSuperior,nuevoInferior);
     }
 }
