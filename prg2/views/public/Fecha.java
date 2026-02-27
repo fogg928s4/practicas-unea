@@ -23,4 +23,8 @@ class Fecha {
 
     public Fecha[] calendarizar(Fecha final, int frecuenciaDias) { return null;}
 
+
+    public int diasTranscurridosFinAño() { return 1; }
+    public int mesesTranscurridosFinAño() { return 1; }
+    public int semanasTranscurridosFinAño() { return 1; }
 }
