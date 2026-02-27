@@ -17,8 +17,10 @@ class Fecha {
     // a una fecha le restamos dias
     public Fecha restar(int dias) { }
 
-    public void editarFecha(int dia, int mes, int anio)
-    public void editarFecha(Fecha fecha)
-    public void editarFecha(int dia)
+    public void editarFecha(int dia, int mes, int anio) {}
+    public void editarFecha(Fecha fecha) {}
+    public void editarFecha(int dia) {}
+
+    public Fecha[] calendarizar(Fecha final, int frecuenciaDias) { return null;}
 
 }
