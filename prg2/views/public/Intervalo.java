@@ -35,8 +35,9 @@ class Intervalo {
         return temp/2;
     }
 
+    // Esto es una implementacion, por lo cual va mas en la vista privada
     public Intervalo unirIntervalos(Intervalo intervalo1, Intervalo intervalo2) {
-        double nuevoSuperior, nuevoInferior;
+        /*double nuevoSuperior, nuevoInferior;
 
         if(intervalo1.LimSuperior() >= intervalo2.LimInferior()) {
             nuevoSuperior = intervalo2.LimSuperior();
@@ -47,6 +48,6 @@ class Intervalo {
             nuevoInferior = intervalo2.LimInferior();
         }
 
-        return new Intervalo(nuevoSuperior,nuevoInferior);
+        return new Intervalo(nuevoSuperior,nuevoInferior);*/
     }
 }
