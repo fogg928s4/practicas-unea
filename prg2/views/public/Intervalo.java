@@ -1,53 +1,31 @@
-package vistas;
+package vistas.intervalo;
 
 class Intervalo {
 
-    // Datos
-    private double longitud;
-    private double limSuperior;
-    private double limInferior;
+    public Intervalo (double inferior, double superior)
+    public Intervalo (double superior)
+    public Intervalo ()
+    public Intervalo (Intervalo intervalo)
 
-    // Constructor
-    public Intervalo(double inferior, double superior) {
-        this.limSuperior = superior;
-        this.limInferior = inferior;
-        this.longitud = obtenerLongitud();
-    }
+    public Intervalo clone()
+    public double longitud()
+    public void desplazar(double desplazamiento)
+    public Intervalo desplazado(double desplazamiento)
 
-    // Propiedades
-    public double LimSuperior() {
-        return this.limSuperior; 
-    }
-    public double LimInferior() {
-        return this.limInferior; 
-    }
-    public double Longitud() {
-        return this.longitud;
-    }
+    public boolean incluye(double punto)
+    public boolean incluye(Intervalo intervalo)
 
-    private double obtenerLongitud() {
-        return limSuperior - limInferior;
-    }
+    public boolean equals(Intervalo intervalo)
+    public Intervalo interseccion(Intervalo intervalo)
+    public boolean intersecta(Intervalo intervalo)   
+    
+    public void oponer()
+    public void doblar()
+    public void mostrar()
+    public void recoger()
 
-    // Metodos
-    public double puntoMedio() {
-        double temp = limSuperior + limInferior;
-        return temp/2;
-    }
+    public Intervalo[] trocear(int numeroTrozos)
+    public Intervalo union(Intervalo intervalo)
+    public double puntoMedio();
 
-    // Esto es una implementacion, por lo cual va mas en la vista privada
-    public Intervalo unirIntervalos(Intervalo intervalo1, Intervalo intervalo2) {
-        /*double nuevoSuperior, nuevoInferior;
-
-        if(intervalo1.LimSuperior() >= intervalo2.LimInferior()) {
-            nuevoSuperior = intervalo2.LimSuperior();
-            nuevoInferior = intervalo1.LimInferior();
-        }
-        else {
-            nuevoSuperior = intervalo1.LimSuperior();
-            nuevoInferior = intervalo2.LimInferior();
-        }
-
-        return new Intervalo(nuevoSuperior,nuevoInferior);*/
-    }
 }
