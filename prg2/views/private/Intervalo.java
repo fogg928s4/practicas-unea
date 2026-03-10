@@ -1,3 +1,5 @@
+import java.io.Console;
+
 class Intervalo {
 
     // Implementacion privada
@@ -104,7 +106,10 @@ class Intervalo {
         superior = superior+(longitud/2);
     }
     public void mostrar()
-    public void recoger()
+    // Darle opcion al usuario de dar el valor
+    public void recoger() {
+        Console.istty();
+    }
 
     public Intervalo[] trocear(int trozos) {
         assert trozos > 1;
@@ -120,7 +125,12 @@ class Intervalo {
         }
         return troceados;
     }
-    public Intervalo union(Intervalo intervalo)
-    public double puntoMedio();
+    public Intervalo union(Intervalo intervalo) {
+        assert this.intersecta(intervalo) && !intervalo.incluye(this);
+        return this.interseccion(intervalo);
+    }
+    public double puntoMedio() {
+        return inferior + (this.longitud()/2);
+    }
 
 }
