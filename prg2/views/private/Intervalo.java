@@ -106,7 +106,20 @@ class Intervalo {
     public void mostrar()
     public void recoger()
 
-    public Intervalo[] trocear(int numeroTrozos)
+    public Intervalo[] trocear(int trozos) {
+        assert trozos > 1;
+
+        Intervalo[] troceados = new Intervalo[trozos];
+        double newInferior = inferior;
+        double tamaño = longitud() / trozos;
+        double newSuperior = newInferior +tamaño;
+        for(int i = 0; i <= trozos; i++) {
+            troceados[i] = new Intervalo(newInferior, newSuperior);
+            newInferior += tamaño;
+            newSuperior += tamaño;
+        }
+        return troceados;
+    }
     public Intervalo union(Intervalo intervalo)
     public double puntoMedio();
 
