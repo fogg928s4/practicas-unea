@@ -9,7 +9,8 @@ class Intervalo {
     // private double longitud;
 
     public Intervalo (double inferior, double superior) {
-        assert inferior <= superior; // sirve para verificar que se cumpla antes de crear el objeto
+        // sirve para verificar que se cumpla antes de crear el objeto
+        assert inferior <= superior : "Hey! inferior es mayor que superior";
         // para "comprometer el funcionamiento"
         // longitud = superior - inferior;
         // puntoMedio = inferior + (longitud /2 );
@@ -66,14 +67,30 @@ class Intervalo {
         return this.incluye(intervalo.inferior) && this.incluye(intervalo.superior);
     }
     public boolean equals(Intervalo intervalo) {
+        assert intervalo != null : "El intervalo de comparacion no puede ser nulo";
         return this.superior == intervalo.superior && 
                 this.inferior == intervalo.inferior;
     }
 
     public Intervalo interseccion(Intervalo intervalo) {
+        assert this.intersecta(intervalo);
 
+        if(this.incluye(intervalo)) {
+            return intervalo.clone();
+        }
+        else if (intervalo.incluye(this)) {
+            return this.clone();
+        }
+        else if (this.incluye(intervalo.inferior)) {
+            return new Intervalo(intervalo.inferior, superior);
+        }
+        else {
+            return new Intervalo(intervalo.superior, inferior);
+        }
     }
+
     public boolean intersecta(Intervalo intervalo)   {
+        assert intervalo != null;
         // reusando tanto como se pueda
         return this.incluye(intervalo.inferior) 
                 || this.incluye(intervalo.superior)
