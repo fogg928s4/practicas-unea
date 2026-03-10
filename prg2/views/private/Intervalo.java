@@ -9,6 +9,8 @@ class Intervalo {
     // private double longitud;
 
     public Intervalo (double inferior, double superior) {
+        assert inferior <= superior; // sirve para verificar que se cumpla antes de crear el objeto
+        // para "comprometer el funcionamiento"
         // longitud = superior - inferior;
         // puntoMedio = inferior + (longitud /2 );
         this.inferior = inferior;
