@@ -1,10 +1,10 @@
 services:
   drupal:
-    image: drupal:9.5
+    image: drupal:11.3-php8.5-apache
     ports:
-      - "8080:80"
-    volumes:
-      - ./drupal:/var/www/html
+      - "42090:80"
+    depends_on:
+      - db
     env_file:
       - .env
     restart: always
