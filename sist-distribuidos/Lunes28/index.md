@@ -48,3 +48,22 @@ class Form1 {
 }
 
 ```
+
+
+## Excepciones
+
+SOn errores o comportamientos inesperados que ocurren en **tiempo de ejecución**. No vale solo poner try/catch por todos lados, sino que se deben de manejar. También en lo posible se debe de evitar limitar al usuario en lo que quiere.
+
+Hay muuuuuchos tipos de excepciones
+
+````C#
+
+try {
+    int numero1, numero2;
+    int cociente = numero1 / numero2;
+
+} catch(DividedByZeroException ex) {
+    //Que hacemos si divide entre 0
+}
+
+```
